@@ -7,5 +7,5 @@ print x
 x[0] += 1
 print x
 x[0] += 1
-print z
 print y
+print z
