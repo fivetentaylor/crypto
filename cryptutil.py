@@ -7,8 +7,11 @@ def grouper(iterable, n, fillvalue=None):
     args = [iter(iterable)] * n
     return it.izip_longest(fillvalue=fillvalue, *args)
 
+def byte2array(byte_string):
+	return np.fromstring(byte_string, dtype=np.uint8)
+		
 def hex2array(hex_string):
-	return np.array([int('%c%c' % x, 16) for x in grouper(hex_string, 2, 0)])
+	return np.array([int('%c%c' % x, 16) for x in grouper(hex_string, 2, 0)], dtype=np.uint8)
 
 def array2hex(byte_array):
 	return ''.join(['%02x' % x for x in byte_array])
