@@ -8,3 +8,12 @@ def egcd(a, b):
         b,a, x,y, u,v = a,r, u,v, m,n
     gcd = b
     return gcd, x, y
+
+def mygcd(a, b):
+	if a < b:
+		a,b = b,a
+	while b > 0:
+		q, r = a // b, a % b
+		print "%4d / %-4d = %3d * %-3d + %-3d" % (a,b,q,b,r)
+		a = b
+		b = r
